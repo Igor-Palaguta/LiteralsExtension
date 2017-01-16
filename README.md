@@ -1,12 +1,12 @@
 Literals Extension
 ==================
 
-This Xcode 8 Source Code Extension will generate Color Literals
+This Xcode 8 Source Code Extension generates Color and Image Literals
 
 Usage
 -----
 
-Select code with colors that should be converted to literals. If nothing selected, all colors from file are converted to literals
+Select code with colors or images that should be converted to literals. If nothing selected, whole file is converted
 
 ![Demo](Demo.gif)
 
@@ -23,8 +23,3 @@ Installation
 8. Run ``Literals.app`` and exit again.
 9. Go to System Preferences -> Extensions -> Xcode Source Editor and enable the extension
 10. The menu-item should now be available from Xcode's Editor menu.
-
-TODO
-----
-
-Add image literals support

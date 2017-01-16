@@ -36,6 +36,14 @@
 					<key>XCSourceEditorCommandName</key>
 					<string>Use Color Literals</string>
 				</dict>
+				<dict>
+					<key>XCSourceEditorCommandClassName</key>
+					<string>$(PRODUCT_MODULE_NAME).ImageLiteralsCommand</string>
+					<key>XCSourceEditorCommandIdentifier</key>
+					<string>$(PRODUCT_BUNDLE_IDENTIFIER).ImageLiteralsCommand</string>
+					<key>XCSourceEditorCommandName</key>
+					<string>Use Image Literals</string>
+				</dict>
 			</array>
 			<key>XCSourceEditorExtensionPrincipalClass</key>
 			<string>$(PRODUCT_MODULE_NAME).SourceEditorExtension</string>
