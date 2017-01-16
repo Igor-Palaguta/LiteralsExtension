@@ -166,8 +166,8 @@
 				784980E21E2CD25500D18D3A /* ImageLiteralsConverter.swift */,
 				780D3FB41E2AD3C800398BF5 /* SourceEditorExtension.swift */,
 				780D3FC01E2AD40F00398BF5 /* TextConverter.swift */,
-				780D3FB21E2AD3C800398BF5 /* Supporting Files */,
 				784980E61E2CD2A000D18D3A /* TextConverter+Command.swift */,
+				780D3FB21E2AD3C800398BF5 /* Supporting Files */,
 			);
 			path = LiteralsExtension;
 			sourceTree = "<group>";
