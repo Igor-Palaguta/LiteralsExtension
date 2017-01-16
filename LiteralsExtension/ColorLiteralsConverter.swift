@@ -1,12 +1,12 @@
 import Foundation
 
 struct ColorLiteralsConverter: TextConverter {
-   func convert(text: String) -> String {
+   func convert(text: String, in range: NSRange) -> String {
       var result = text as NSString
 
       let matches = rgbaColorRegex.matches(in: text,
                                            options: [],
-                                           range: NSRange(location: 0, length: result.length))
+                                           range: range)
 
       for match in matches.reversed() {
 

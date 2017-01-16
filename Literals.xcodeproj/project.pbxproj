@@ -241,7 +241,6 @@
 					};
 					780D3F991E2AD3A400398BF5 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = AETQMU8637;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 780D3F8A1E2AD3A300398BF5;
 					};
@@ -455,7 +454,7 @@
 				DEVELOPMENT_TEAM = AETQMU8637;
 				INFOPLIST_FILE = Literals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta.Literals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta5.Literals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -471,7 +470,7 @@
 				DEVELOPMENT_TEAM = AETQMU8637;
 				INFOPLIST_FILE = Literals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta.Literals;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta5.Literals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -484,7 +483,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AETQMU8637;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LiteralsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta.LiteralsTests;
@@ -501,7 +500,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = AETQMU8637;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LiteralsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta.LiteralsTests;
@@ -521,7 +520,7 @@
 				INFOPLIST_FILE = LiteralsExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta.Literals.LiteralsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta5.Literals.LiteralsExtension;
 				PRODUCT_NAME = "Convert Literals";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -538,7 +537,7 @@
 				INFOPLIST_FILE = LiteralsExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta.Literals.LiteralsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorpalaguta5.Literals.LiteralsExtension;
 				PRODUCT_NAME = "Convert Literals";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -564,6 +563,7 @@
 				780D3FA51E2AD3A400398BF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		780D3FA61E2AD3A400398BF5 /* Build configuration list for PBXNativeTarget "LiteralsTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +572,7 @@
 				780D3FA81E2AD3A400398BF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		780D3FBC1E2AD3C900398BF5 /* Build configuration list for PBXNativeTarget "LiteralsExtension" */ = {
 			isa = XCConfigurationList;
@@ -580,6 +581,7 @@
 				780D3FBE1E2AD3C900398BF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
