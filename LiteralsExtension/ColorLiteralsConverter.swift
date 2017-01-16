@@ -9,7 +9,6 @@ struct ColorLiteralsConverter: TextConverter {
                                            range: range)
 
       for match in matches.reversed() {
-
          let components: [(String, String)] = [
             ("red", result.substring(with: match.rangeAt(1))),
             ("green", result.substring(with: match.rangeAt(2))),

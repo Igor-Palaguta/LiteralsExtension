@@ -3,8 +3,8 @@ import XCTest
 final class ColorLiteralsConverterTests: XCTestCase {
    private let converter = ColorLiteralsConverter()
 
-   private func convert(_ text: String) -> String {
-      return converter.convert(text: text)
+   private func convert(_ text: String, in range: NSRange? = nil) -> String {
+      return converter.convert(text: text, in: range ?? NSRange(location: 0, length: (text as NSString).length))
    }
 
    func testUIColor() {
@@ -27,5 +27,10 @@ final class ColorLiteralsConverterTests: XCTestCase {
 
    func testLeadingSpace() {
       XCTAssertEqual(convert("NSColor( red: 1, green: 0, blue: 0, alpha: 1)"), "#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)")
+   }
+
+   func testRange() {
+      XCTAssertEqual(convert("UIColor(red: 1, green: 0, blue: 0, alpha: 1), UIColor(red: 0, green: 1, blue: 0, alpha: 1)", in: NSRange(location: 46, length: 44)), "UIColor(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)")
+      XCTAssertEqual(convert("UIColor(red: 1, green: 0, blue: 0, alpha: 1)", in: NSRange(location: 1, length: 43)), "UIColor(red: 1, green: 0, blue: 0, alpha: 1)")
    }
 }
