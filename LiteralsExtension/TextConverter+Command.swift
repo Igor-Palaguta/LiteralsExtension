@@ -3,7 +3,6 @@ import XcodeKit
 
 enum TextConverterError: Error {
    case notSwiftLanguage
-   case noSelection
 }
 
 extension TextConverter {
@@ -13,34 +12,43 @@ extension TextConverter {
          return completionHandler(TextConverterError.notSwiftLanguage)
       }
 
-      guard let selection = invocation.buffer.selections.firstObject as? XCSourceTextRange else {
-         completionHandler(TextConverterError.noSelection)
-         return
+      for selection in invocation.selections.reversed() {
+         let linesSet = IndexSet(selection.start.line...selection.end.line)
+
+         let lines = invocation[linesAt: linesSet]
+         let code = lines.joined()
+
+         let tailLength = invocation[lineAt: selection.end.line].nsLength - selection.end.column
+
+         let changedCode = self.convert(text: code,
+                                        in: NSRange(location: selection.start.column, length: code.nsLength - tailLength - selection.start.column))
+
+         let changedLines = changedCode.lines
+         invocation.buffer.lines.replaceObjects(in: NSRange(location: selection.start.line, length: linesSet.count),
+                                                withObjectsFrom: changedLines,
+                                                range: NSRange(location: 0, length: changedLines.count))
       }
-
-      let range = selection.start == selection.end ? invocation.bufferRange : selection
-
-      let linesSet = IndexSet(range.start.line...range.end.line)
-
-      let lines = invocation[linesAt: linesSet]
-      let code = lines.joined()
-
-      let tailLength = invocation[lineAt: range.end.line].nsLength - range.end.column
-
-      let changedCode = self.convert(text: code,
-                                     in: NSRange(location: range.start.column, length: code.nsLength - tailLength - range.start.column))
-
-      let changedLines = changedCode.lines
-      invocation.buffer.lines.replaceObjects(in: NSRange(location: range.start.line, length: linesSet.count),
-                                             withObjectsFrom: changedLines,
-                                             range: NSRange(location: 0, length: changedLines.count))
 
       completionHandler(nil)
    }
 }
 
 extension XCSourceEditorCommandInvocation {
-   fileprivate var bufferRange: XCSourceTextRange {
+   fileprivate var selections: [XCSourceTextRange] {
+      let selections = self.buffer.selections.flatMap { $0 as? XCSourceTextRange }
+
+      if selections.isEmpty {
+         return [self.bufferRange]
+      }
+
+      if selections.count == 1, let selection = selections.first, selection.start == selection.end {
+         return [self.bufferRange]
+      }
+
+      return selections
+   }
+
+   private var bufferRange: XCSourceTextRange {
       let start = XCSourceTextPosition(line: 0, column: 0)
       let end = XCSourceTextPosition(line: self.buffer.lines.count - 1,
                                      column: self.lastLine.nsLength)
