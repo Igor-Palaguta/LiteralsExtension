@@ -33,4 +33,16 @@ final class ColorLiteralsConverterTests: XCTestCase {
       XCTAssertEqual(convert("UIColor(red: 1, green: 0, blue: 0, alpha: 1), UIColor(red: 0, green: 1, blue: 0, alpha: 1)", in: NSRange(location: 46, length: 44)), "UIColor(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 1, blue: 0, alpha: 1)")
       XCTAssertEqual(convert("UIColor(red: 1, green: 0, blue: 0, alpha: 1)", in: NSRange(location: 1, length: 43)), "UIColor(red: 1, green: 0, blue: 0, alpha: 1)")
    }
+
+   func testDivision() {
+      XCTAssertEqual(
+         convert("UIColor(red: 255/255, green: 0, blue: 0, alpha: 1)"),
+         "#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)"
+      )
+
+      XCTAssertEqual(
+         convert("UIColor(red: 5 / 255, green: 0, blue: 0, alpha: 1)"),
+         "#colorLiteral(red: 0.02, green: 0, blue: 0, alpha: 1)"
+      )
+   }
 }
