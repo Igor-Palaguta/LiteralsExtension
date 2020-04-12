@@ -1,7 +1,7 @@
 Literals Extension
 ==================
 
-This Xcode 8 Source Code Extension generates Color and Image Literals
+This Xcode Source Code Extension generates Color and Image Literals
 
 Usage
 -----
